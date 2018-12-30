@@ -1,4 +1,4 @@
-;;; zeal-at-point.el --- Search the word at point with Zeal
+;;; zeal-at-point.el --- Search the word at point with Zeal -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2013 Jinzhu
 ;; Author:  Jinzhu <wosmvp@gmail.com>
@@ -208,7 +208,7 @@ the combined docset.")
   )
 
 ;;;###autoload
-(defun zeal-at-point-search (&optional edit-search)
+(defun zeal-at-point-search (&optional _edit-search)
   "Prompt and search in zeal"
   (interactive "P")
   (let ((search (zeal-at-point-maybe-add-docset "")))
