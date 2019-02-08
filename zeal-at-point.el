@@ -62,8 +62,7 @@
   :group 'external
   :prefix "zeal-at-point-")
 
-(defcustom zeal-at-point-exe
-  (executable-find "zeal")
+(defcustom zeal-at-point-exe (executable-find "zeal")
   "Location of zeal executable."
   :group 'zeal-at-point
   :type 'string)
@@ -197,7 +196,8 @@ the combined docset.")
 (defun zeal-at-point (&optional edit-search)
   "Search for the word at point in Zeal."
   (interactive "P")
-  (let* ((thing (if mark-active (buffer-substring (region-beginning) (region-end)) (thing-at-point 'symbol)))
+  (let* ((thing (if mark-active (buffer-substring (region-beginning) (region-end))
+                  (thing-at-point 'symbol)))
          (search (zeal-at-point-maybe-add-docset thing)))
     (zeal-at-point-run-search
      (if (or edit-search (null thing))
